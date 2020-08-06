@@ -1,0 +1,26 @@
+{
+  "name": "sorting-anything",
+  "version": "1.0.0",
+  "description": "## Goal:",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arstrel/sorting-anything.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arstrel/sorting-anything/issues"
+  },
+  "homepage": "https://github.com/arstrel/sorting-anything#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
