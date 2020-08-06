@@ -1,32 +1,16 @@
-const unsorted = [4, 1, 5, 7, 2, 9, 3, 0, -5];
+import { BubbleSorter } from './Sorter';
+import { NumbersCollection } from './NumbersCollection';
+import { CharCollection } from './CharCollection';
+import { LinkedList } from './LinkedList';
 
-class Sorter {
-  constructor(public collection: number[]) {}
+const numbersCol = new NumbersCollection([4, 1, 5, 7, 2, 9, 3, 0, -5]);
+const charCollection = new CharCollection('uhoiushXrtad');
+const linkedList = new LinkedList();
 
-  sort(): void {
-    const swap = (id1: number, id2: number): void => {
-      [this.collection[id1], this.collection[id2]] = [
-        this.collection[id2],
-        this.collection[id1],
-      ];
-    };
-
-    let noSwap;
-    for (let i = this.collection.length; i >= 0; i--) {
-      noSwap = true;
-      for (let j = 1; j < i; j++) {
-        if (this.collection[j] < this.collection[j - 1]) {
-          noSwap = false;
-          swap(j, j - 1);
-        }
-      }
-      if (noSwap) {
-        break;
-      }
-    }
-  }
-}
-
-const sorter = new Sorter(unsorted);
+const sorter = new BubbleSorter(numbersCol);
 sorter.sort();
-console.log(sorter.collection);
+console.log(numbersCol.data);
+
+const charSorter = new BubbleSorter(charCollection);
+charSorter.sort();
+console.log(charCollection.data);
