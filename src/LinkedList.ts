@@ -1,4 +1,4 @@
-import { Sortable } from './Sorter';
+import { BubbleSorter } from './Sorter';
 
 class Node {
   next: Node | null = null;
@@ -6,7 +6,7 @@ class Node {
   constructor(public data: number) {}
 }
 
-export class LinkedList implements Sortable {
+export class LinkedList extends BubbleSorter {
   head: Node | null = null;
 
   get length(): number {
